@@ -1,0 +1,32 @@
+{
+  "name": "blog.jameslatten",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind-watch": "tailwindcss -i tailwind.sass -o static/css/blog.css --watch",
+    "tailwind-build": "tailwindcss -i tailwind.sass -o static/css/blog.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesl1500/blog.jameslatten.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesl1500/blog.jameslatten/issues"
+  },
+  "homepage": "https://github.com/jamesl1500/blog.jameslatten#readme",
+  "devDependencies": {
+    "postcss-nesting": "^10.2.0",
+    "tailwindcss": "^3.1.8"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.11",
+    "bootstrap": "^5.2.1",
+    "jquery": "^3.6.1",
+    "postcss": "^8.4.16"
+  }
+}
