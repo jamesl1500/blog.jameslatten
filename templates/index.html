@@ -1,9 +1,12 @@
 {% extends "layout/base.html" %}
-{%block content %}
+{% block content %}
+{% load static %}
+
 <div class="section firstSection">
     <div class="container">
+        <img class="picture" src="{% static 'img/resume_picture.jpg' %}" />
         <h3 class="introduction">
-            I'm James - Web developer, designer, writer, with a passion for writting code and serving the community
+            Hi, I'm James - Web developer, designer, writer, with a passion for writting code and serving the community
         </h3>
         <h4>I'm available for new projects, <a href="https://calendly.com/jameslatten/initial-consultation">schedule an appointment.</a> with me</h4>
         <div class="statement">

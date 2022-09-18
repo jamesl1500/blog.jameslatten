@@ -1,0 +1,28 @@
+{% extends "layout/base.html" %}
+{% block content %}
+{% load static %}
+<div class="section blogPage firstSection">
+    <div class="container">
+        <h3 class="introduction">
+            Blog
+        </h3>
+        <div class="blogInfo">
+            <p>{% block title %} {{ object.title }} {% endblock title %}</p>
+            <h5>{{ post.created_on }}</h5>
+        </div>
+    </div>
+</div>
+<div class="section blogPage secondSection" id="education">
+    <div class="container">
+        <div class="row">
+            <img src="{{ post.cover.url}}" />
+            <p>{{ object.content | safe }}</p>
+        </div>
+    </div>
+</div>
+<!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/jameslatten/initial-consultation', text: 'Book an Appointment', color: '#ffffff', textColor: '#1a1a1a', branding: undefined }); }</script>
+<!-- Calendly badge widget end -->
+{% endblock %}

@@ -1,13 +1,33 @@
 {% extends "layout/base.html" %}
-{%block content %}
-{% for post in post_list %}
-<div class="card mb-4">
-    <div class="card-body">
-        <h2 class="card-title">{{ post.title }}</h2>
-        <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on }} </p>
-        <p class="card-text">{{post.content|slice:":200" }}</p>
-        <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+{% block content %}
+{% load static %}
+<div class="section blog firstSection">
+    <div class="container">
+        <h3 class="introduction">
+            Blog
+        </h3>
+       <p>Welcome to my blog, this is where I express my thoughts and ideas. 
     </div>
 </div>
-{% endfor %}
+<div class="section blog secondSection" id="education">
+    <div class="container">
+        <div class="row">
+        {% for post in post_list %}
+            <div class="blogPost col-lg-4">
+                <div class="innerBlogPost">
+                    <p class="info">{{ post.created_on }} </p>
+                    <h2 class="title">{{ post.title }}</h2>
+                    <p class="preview">{{post.content|slice:":200" }}</p>
+                    <a href="{% url 'post_detail' post.slug  %}" class="">Read More</a>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/jameslatten/initial-consultation', text: 'Book an Appointment', color: '#ffffff', textColor: '#1a1a1a', branding: undefined }); }</script>
+<!-- Calendly badge widget end -->
 {% endblock %}
