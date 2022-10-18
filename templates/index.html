@@ -59,24 +59,14 @@
                 </div>
                 <div class="statementDesc col-lg-7">
                     <div class="row">
+                        {% for job in jobs %}
                         <div class="box eduBox col-lg-4">
-                            <h3>Freelance Full-Stack Web Developer</h3>
-                            <p>Self-Employed</p>
-                            <p>Worked with customers on their needs when it came to websites and applications. Provided amazing customer service and ensured quality in all my deliverables.
-                            <h4>August 2014 to Present</h4>
+                            <h3>{{ job.job_title }}</h3>
+                            <p>{{ job.job_location }}</p>
+                            <p>{{ job.job_desc }}</p>
+                            <h4>{{ job.job_date }}</h4>
                         </div>
-                        <div class="box eduBox col-lg-4">
-                            <h3>Senior Web Developer/Owner</h3>
-                            <p>Sitelyft Studios, LLC</p>
-                            <p>Created Websites for customers. Provided superior care and quality to my customers and ensured they received amazing products</p>
-                            <h4>March 2017 to Present</h4>
-                        </div>
-                        <div class="box eduBox col-lg-4">
-                            <h3>IT Technical Support</h3>
-                            <p>Lorain County Community College</p>
-                            <p>Worked as IT Technical Support for our eLearning division</p>
-                            <h4>January 2017 to January 2018</h4>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
