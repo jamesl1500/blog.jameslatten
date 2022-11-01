@@ -7,4 +7,6 @@ urlpatterns = [
     path('resume', views.Resume, name='resume'),
     path('contact_me', views.ContactMe, name='contact_me'),
     path('blog/<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
+    path('certs', views.CertsPage, name='certs'),
+    path('certs/<slug:slug>/', views.CertDetail.as_view(), name='cert_detail'),
 ]

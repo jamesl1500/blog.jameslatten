@@ -2,14 +2,14 @@
     <div class="container">
         <div class="row">
             <ul class="nav col-lg-4 col-sm-12 col-xs-12">
-                <li><a href="{% url 'home' %}" class="nav-link px-2">Home</a></li>
+                <li><a href="{% url 'certs' %}" class="nav-link px-2">Certs</a></li>
                 <li><a href="{% url 'blog' %}" class="nav-link px-2">Blog</a></li>
                 <li><a href="{% url 'home' %}#education" class="nav-link px-2">Education</a></li>
                 <li><a href="{% url 'home' %}#projects" class="nav-link px-2">Projects</a></li>
             </ul>
 
             <div class="branding col-lg-4 col-sm-12 col-xs-12">
-                <a href="/" class="branding text-decoration-none">
+                <a href="{% url 'home' %}" class="branding text-decoration-none">
                     James Latten
                 </a>
             </div>

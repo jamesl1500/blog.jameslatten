@@ -37,3 +37,26 @@ class Jobs(models.Model):
 
     def __str__(self):
         return self.job_title
+
+# Certs Database Model
+CERT_STATUS = (
+    (0, "Draft"),
+    (1, "In Progress"),
+    (2, "Obtained")
+)
+
+class Certs(models.Model):
+    cert_title = models.CharField(max_length=255)
+    slug = models.CharField(max_length=250)
+    cert_subjects = models.CharField(max_length=255)
+    cert_desc = models.TextField()
+    cert_link = models.CharField(max_length=255)
+    cert_image = models.ImageField(upload_to='static/storage/images/')
+    created_on = models.DateTimeField(auto_now_add=True)
+    cert_status = models.IntegerField(choices=CERT_STATUS, default=0)
+
+    class Meta:
+        ordering = ['-created_on']
+
+    def __str__(self):
+        return self.cert_title

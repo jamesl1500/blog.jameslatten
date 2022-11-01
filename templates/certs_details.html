@@ -4,19 +4,21 @@
 <div class="section blogPage firstSection">
     <div class="container">
         <h3 class="introduction">
-            Blog
+            Certs
         </h3>
         <div class="blogInfo">
-            <p>{% block title %} {{ object.title }} {% endblock title %}</p>
-            <h5>{{ post.created_on }}</h5>
+            <p>{% block title %} {{ object.cert_title }} {% endblock title %}</p>
+            <h5>{{ object.cert_subjects }}</h5>
         </div>
     </div>
 </div>
 <div class="section blogPage secondSection" id="education">
     <div class="container">
         <div class="row">
-            <img src="{{ post.cover.url}}" />
-            <p>{{ object.content | linebreaks }}</p>
+            {% if object.cert_status == 2 %}
+                <p>Obtained - <a href="{{ object.cert_link }}">Verify Here</a></p>
+            {% endif %}
+            <p>{{ object.cert_desc | linebreaks }}</p>
         </div>
     </div>
 </div>

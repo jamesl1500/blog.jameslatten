@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Jobs
+from .models import Post, Jobs, Certs
 
 # Post admin settings
 class PostAdmin(admin.ModelAdmin):
@@ -15,6 +15,14 @@ class JobsAdmin(admin.ModelAdmin):
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title', )}
 
+# Certs Admin Settings
+class CertsAdmin(admin.ModelAdmin):
+    list_display = ('title', 'slug', 'status', 'created_on')
+    list_filter = ("status",)
+    search_fields = ['title', 'content']
+    prepopulated_fields = {'slug': ('title', )}
+
 # Register your models here.
 admin.site.register(Post, PostAdmin)
 admin.site.register(Jobs)
+admin.site.register(Certs)
