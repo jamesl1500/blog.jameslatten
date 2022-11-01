@@ -46,8 +46,8 @@ CERT_STATUS = (
 )
 
 class Certs(models.Model):
-    cert_title = models.CharField(max_length=255)
-    slug = models.CharField(max_length=250)
+    cert_title = models.CharField(max_length=255, unique=True)
+    slug = models.SlugField(max_length=250, unique=True)
     cert_subjects = models.CharField(max_length=255)
     cert_desc = models.TextField()
     cert_link = models.CharField(max_length=255)
