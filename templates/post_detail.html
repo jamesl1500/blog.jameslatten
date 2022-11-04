@@ -15,7 +15,9 @@
 <div class="section blogPage secondSection" id="education">
     <div class="container">
         <div class="row">
-            <img src="{{ post.cover.url}}" />
+            {% if post.cover.url != ""%}
+                <img src="{{ post.cover.url}}" />
+            {% endif %}
             <p>{{ object.content | linebreaks }}</p>
         </div>
     </div>
