@@ -1,3 +1,4 @@
+from typing_extensions import Required
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -10,7 +11,7 @@ STATUS = (
 # Post Datbase Model
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    cover = models.ImageField(upload_to='static/storage/images/')
+    cover = models.ImageField(upload_to='static/storage/images/', blank=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now=True)
@@ -51,7 +52,7 @@ class Certs(models.Model):
     cert_subjects = models.CharField(max_length=255)
     cert_desc = models.TextField()
     cert_link = models.CharField(max_length=255)
-    cert_image = models.ImageField(upload_to='static/storage/images/')
+    cert_image = models.ImageField(upload_to='static/storage/images/', blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     cert_status = models.IntegerField(choices=CERT_STATUS, default=0)
 
