@@ -7,3 +7,4 @@ node_modules
 src/settings.py
 db.sqlite3
 env/bin/pip3
+.vscode
