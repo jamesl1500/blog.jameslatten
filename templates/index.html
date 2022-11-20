@@ -59,14 +59,16 @@
                 </div>
                 <div class="statementDesc col-lg-7">
                     <div class="row">
-                        {% for job in jobs %}
-                        <div class="box eduBox col-lg-4">
-                            <h3>{{ job.job_title }}</h3>
-                            <p>{{ job.job_location }}</p>
-                            <p>{{ job.job_desc }}</p>
-                            <h4>{{ job.job_date }}</h4>
-                        </div>
-                        {% endfor %}
+                        {% if jobs|length > 0 %}
+                            {% for job in jobs %}
+                            <div class="box eduBox col-lg-4">
+                                <h3>{{ job.job_title }}</h3>
+                                <p>{{ job.job_location }}</p>
+                                <p>{{ job.job_desc }}</p>
+                                <h4>{{ job.job_date }}</h4>
+                            </div>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
             </div>

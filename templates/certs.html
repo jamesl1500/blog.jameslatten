@@ -12,18 +12,20 @@
 <div class="section blog secondSection" id="education">
     <div class="container">
         <div class="row">
-        {% for cert in certs %}
-            <div class="blogPost col-lg-4">
-                <div class="innerBlogPost">
-                    <p class="info">{{ cert.created_on }} </p>
-                    <h2 class="title">{{ cert.cert_title }}</h2>
-                    <h4 style="font-weight: bold;">{{ cert.cert_subjects }}</h4>
-                    <p class="preview">{{cert.cert_desc| slice:":110" }}...</p>
-                    <a href="{{ cert.cert_link }}" class="">Verify</a> /
-                    <a href="{% url 'cert_detail' cert.slug  %}" class="">More info</a>
+        {% if certs|length > 0 %}
+            {% for cert in certs %}
+                <div class="blogPost col-lg-4">
+                    <div class="innerBlogPost">
+                        <p class="info">{{ cert.created_on }} </p>
+                        <h2 class="title">{{ cert.cert_title }}</h2>
+                        <h4 style="font-weight: bold;">{{ cert.cert_subjects }}</h4>
+                        <p class="preview">{{cert.cert_desc| slice:":110" }}...</p>
+                        <a href="{{ cert.cert_link }}" class="">Verify</a> /
+                        <a href="{% url 'cert_detail' cert.slug  %}" class="">More info</a>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        {% endif %}
         </div>
     </div>
 </div>

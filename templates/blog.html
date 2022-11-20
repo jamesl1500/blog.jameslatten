@@ -12,16 +12,18 @@
 <div class="section blog secondSection" id="education">
     <div class="container">
         <div class="row">
-        {% for post in post_list %}
-            <div class="blogPost col-lg-4">
-                <div class="innerBlogPost">
-                    <p class="info">{{ post.created_on }} </p>
-                    <h2 class="title">{{ post.title }}</h2>
-                    <p class="preview">{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="">Read More</a>
+        {% if post_list|length > 0 %}
+            {% for post in post_list %}
+                <div class="blogPost col-lg-4">
+                    <div class="innerBlogPost">
+                        <p class="info">{{ post.created_on }} </p>
+                        <h2 class="title">{{ post.title }}</h2>
+                        <p class="preview">{{post.content|slice:":200" }}</p>
+                        <a href="{% url 'post_detail' post.slug  %}" class="">Read More</a>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        {% endif %}
         </div>
     </div>
 </div>
