@@ -7,7 +7,7 @@ jobs:
       - image: arvindr226/alpine-ssh
     steps:
       - checkout
-      - run: ssh -oStrictHostKeyChecking=no -v circleci-deployment@143.198.118.144 "../../var/www/deploy.sh"
+      - run: ssh -oStrictHostKeyChecking=no -v circleci-deployment@143.198.118.144 "../../var/www/jameslatten.com/deploy.sh"
 
 # Orchestrate our job run sequence
 workflows:
