@@ -8,3 +8,4 @@ src/settings.py
 db.sqlite3
 env/bin/pip3
 .vscode
+src/settings.py
