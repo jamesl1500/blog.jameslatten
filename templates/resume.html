@@ -1,0 +1,19 @@
+{% extends "layout/base.html" %}
+{% block content %}
+{% load static %}
+<div class="section blog firstSection">
+    <div class="container">
+        <h3 class="introduction">
+            Resume
+        </h3>
+       <p>View my latest resume!</p>
+    </div>
+</div>
+<div class="section blog secondSection" id="education">
+    <div class="container">
+        <div class="row">
+            <embed src="{% static 'files/james_latten_december_resume.pdf' %}" type="application/pdf" width="100%" height="600px" />
+        </div>
+    </div>
+</div>
+{% endblock %}
